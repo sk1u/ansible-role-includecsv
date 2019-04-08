@@ -56,7 +56,7 @@ EXAMPLES = """
 # load csv
 - include_csv: src=path/to/foo.csv
 
-# 
+#
 - include_csv: src=path/to/bar.csv delimiter="\t" quotechar='"'
 """
 
@@ -86,7 +86,6 @@ def main():
             'delimiter': dict(required=False, default=','),
             'quotechar': dict(required=False, default='"'),
         },
-        check_invalid_arguments=False,
         supports_check_mode=True,
     )
 

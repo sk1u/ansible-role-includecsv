@@ -3,7 +3,9 @@
 This role contains no tasks, but provides the ``include_csv`` module which loads
 data from a CSV file.
 
-Ansible Galaxy Page: https://galaxy.ansible.com/mkouhei/include_csv/
+This is a fork of https://github.com/mkouhei/ansible-role-includecsv.
+
+Ansible Galaxy Page: https://galaxy.ansible.com/sk1u/ansible_role_includecsv/
 
 ## install
 
@@ -11,7 +13,7 @@ Ansible Galaxy Page: https://galaxy.ansible.com/mkouhei/include_csv/
 $ virtualenv /path/to/venv
 $ /path/to/venv/bin/pip install ansible
 $ cd /path/to/your_playbook
-$ /path/to/venv/bin/ansible-galaxy install -p ./library mkouhei.include_csv
+$ /path/to/venv/bin/ansible-galaxy install -p ./library sk1u.ansible_role_includecsv
 ```
 
 ### usages
@@ -99,14 +101,14 @@ on the desired behaviour):
   target node
 
 To load CSV data *only once* from a file on the control server,
-use a separate play within your playbook which 
+use a separate play within your playbook which
 targets localhost. Subsequent plays can access the data via `hostvars`, for
 example:
 
 ```yaml
 - hosts: localhost
   roles:
-    - role: mkouhei.include_csv
+    - role: sk1u.ansible_role_includecsv
   tasks:
     - include_csv: src=fruits.csv
 
@@ -134,4 +136,4 @@ GPLv3
 ## Author Information
 
 [Kouhei Maeda](https://github.com/mkouhei)
-
+[Michael Cuffaro](https://github.com/sk1u)
